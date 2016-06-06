@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Контакты</title>
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+	<script>
+	   function isEmail() {
+		var str = document.getElementById("email").value;
+		var status = document.getElementById("status");
+		var re = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+		if (re.test(str)) status.innerHTML = "";
+		  else status.innerHTML = "Адрес неверный";
+		if(isEmpty(str)) status.innerHTML = "Поле пустое";
+	   }
+	   function isEmpty(str){
+		return (str == null) || (str.length == 0);
+	   }
+  </script>
+</head>
+<body>
+	<div id="header">
+		<div>
+			<div id="logo">
+				<a href="index.html"><img src="static/images/logo.png" alt="LOGO"></a>
+			</div>
+			<ul id="navigation">
+				<li>
+					<a href="/">Главная</a>
+				</li>
+				<li>
+					<a href="about.html">О нас</a>
+				</li>
+				<li>
+					<a href="gallery.html">Галерея</a>
+				</li>
+				<li class="selected">
+					<a href="contact.html">Контакты</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="contents">
+		<div>
+			<div class="body" id="contact">
+				<div id="sidebar">
+					<div class="body">
+						<img src="static/images/resort.png" alt="Img">
+						<div class="contact">
+							<p>
+								Для заказа или пожеланий звоните: <b>8-925-260-84-00</b> Или просто напишите нам: <b class="email">info@carvedcreations.com</b>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div id="main">
+					<h1>Контакты</h1>
+					<p>
+						Мы всегда открыты к сотрудничеству. Если вы считаете, что можете чем-то помoчь проекту, то пиши или звоните нам, пообщаемся и что-нибудь придумаем :)
+					</p>
+					<form action="/contact.html" method="post">
+						<label>Имя</label>
+						<input type="text" name="name" value="">
+						<label>Email</label>
+						<input id="email" name="email" type="text" value="">
+						<label>Телефон</label>
+						<input type="text" name="phone" value="">
+						<label>Текст</label>
+						<textarea name="text"></textarea>
+						<input type="submit" value="Отправить" class="btn1">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
